@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AuraAi — AI Profit Audit for California SMBs</title>
+<meta name="description" content="AuraAi finds and recovers 10–25% hidden profit in small and mid-sized California businesses using AI-driven efficiency audits."/>
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+<header class="header"><div class="container bar">
+  <div class="logo" aria-label="AuraAi"><span class="accent">Aura</span>Ai</div>
+  <nav class="nav">
+    <a href="#how">How it works</a>
+    <a href="./portal.html">Dashboard</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#scan" class="cta">Run Free Profit Scan</a>
+  </nav>
+</div></header>
+
+<main>
+<section class="hero"><div class="container hero-grid">
+  <div class="hero-copy">
+    <h1>You’re leaving money on the table every month.<br/>Let’s prove it in 90 seconds.</h1>
+    <p class="lead">AuraAi finds 10–25% of hidden profit by exposing wasted spend, idle labour, and subscription creep. Built for California trades, clinics, and salons.</p>
+    <div class="stack"><a href="#scan" class="cta">Run Free Profit Scan</a><a href="#sample" class="btn">See a sample report</a></div>
+    <p class="muted">CCPA-aware • Read-only connections • No long contracts</p>
+  </div>
+  <div class="hero-art"><img src="./images/hero.svg" alt=""/></div>
+</div></section>
+
+<section id="funnel" class="section"><div class="container">
+  <h2>Simple funnel. Real outcomes.</h2>
+  <div class="cards three">
+    <article class="card"><img src="./images/step.svg" class="card-art" alt=""/><h3>1) Quick Scan (5 min)</h3><p>Enter a few numbers. Get your headline savings estimate instantly.</p><a href="#scan" class="link">Start now →</a></article>
+    <article class="card"><img src="./images/step.svg" class="card-art" alt=""/><h3>2) Full Diagnostic</h3><p>Unlock line-by-line recommendations by vendor, team, and process.</p><a href="#pricing" class="link">See pricing →</a></article>
+    <article class="card"><img src="./images/step.svg" class="card-art" alt=""/><h3>3) Implement & Track</h3><p>We handle automations and renegotiations, then verify savings monthly.</p><a href="./portal.html" class="link">Open dashboard →</a></article>
+  </div>
+</div></section>
+
+<section id="how" class="section"><div class="container">
+  <h2>How it works</h2>
+  <div class="cards three">
+    <article class="card"><h3>Connect or Upload</h3><p>OAuth to QuickBooks, Jobber, Square, and more, or drag-and-drop CSVs/PDFs. Read-only by default.</p></article>
+    <article class="card"><h3>AI Audit</h3><p>We analyze expenses, job times, payroll, and subscriptions. We flag waste and calculate savings.</p></article>
+    <article class="card"><h3>Recovery Plan</h3><p>Automation, renegotiation, scheduling, pricing fixes. We track actual savings monthly.</p></article>
+  </div>
+</div></section>
+
+<section id="pricing" class="section"><div class="container">
+  <h2>Pricing</h2>
+  <div class="cards three">
+    <article class="card"><div class="badge">Lead Magnet</div><h3>Free Profit Scan</h3><p>Instant headline estimate and top 3 opportunities.</p><p class="price">$0</p><a href="#scan" class="cta">Start free</a></article>
+    <article class="card"><div class="badge">Most Popular</div><h3>Detailed Diagnostic</h3><p>Line-by-line recommendations, savings math, and a 30–90 day plan.</p><ul><li>No result, no fee if <span class="mono">savings &lt; 10 × $299</span>.</li><li>PDF + live walkthrough.</li></ul><p class="price">$299</p><a class="cta unlock" href="./success.html?mock=stripe">Unlock my report</a><p class="note">Mock enabled. Replace with real Stripe link in <code>script.js</code> CONFIG.</p></article>
+    <article class="card"><div class="badge">Outcome-Based</div><h3>Implement & Track</h3><ul><li>Automations + vendor renegotiation.</li><li><strong>20–25%</strong> of verified savings for 6–12 months or $2,000 setup.</li><li>Monthly “Profit Tracker.”</li></ul><a href="./portal.html" class="cta">Open dashboard</a></article>
+  </div>
+</div></section>
+
+<section id="scan" class="section"><div class="container">
+  <h2>Run your Free Profit Scan</h2>
+  <div id="step1" class="card">
+    <h3>Step 1 — Your details</h3>
+    <form id="scanForm">
+      <div class="grid">
+        <label>Full name<input name="name" required></label>
+        <label>Work email<input name="email" type="email" required></label>
+        <label>Business name<input name="business"></label>
+        <label>Industry<select name="industry"><option>HVAC</option><option>Plumbing</option><option>Electrical</option><option>Med Spa</option><option>Salon</option><option>Clinic</option><option>Construction</option><option>Other</option></select></label>
+        <label>Staff count<input id="staff2" name="staff" type="number" min="1" value="10"></label>
+      </div>
+      <button id="toStep2" class="cta">Continue</button>
+    </form>
+  </div>
+
+  <div id="step2" class="card" style="display:none;">
+    <h3>Step 2 — Quick numbers</h3>
+    <div class="grid">
+      <label>Sector<select id="sector"><option value="trades">Trades</option><option value="spa">Salon / Med Spa</option><option value="clinic">Clinic</option><option value="contractor">Construction</option><option value="other">Other</option></select></label>
+      <label>Monthly revenue (USD)<input id="rev" type="number" inputmode="decimal" placeholder="120000"></label>
+      <label>Gross margin %<input id="gm" type="number" inputmode="decimal" placeholder="40"></label>
+      <label>Avg hourly labour cost ($)<input id="rate" type="number" inputmode="decimal" placeholder="28"></label>
+      <label>Current utilisation %<input id="util" type="number" inputmode="decimal" placeholder="62"></label>
+      <label>Software tools (count)<input id="tools" type="number" min="0" step="1" placeholder="9"></label>
+      <label>Avg seat cost ($/mo)<input id="seat" type="number" inputmode="decimal" placeholder="25"></label>
+      <label>Ad spend ($/mo)<input id="ads" type="number" inputmode="decimal" placeholder="0"></label>
+      <label>ROAS (x)<input id="roas" type="number" inputmode="decimal" placeholder="1.5"></label>
+      <label class="inline"><input type="checkbox" id="noshow"> High no-show / empty slots</label>
+    </div>
+    <div class="stack"><button id="calc" class="cta" type="button">Calculate</button></div>
+  </div>
+
+  <div id="teaser" class="tease" style="display:none;">
+    <h3>You’re leaving <span id="estRange" class="roi-output">$0 – $0 / yr</span> on the table.</h3>
+    <p class="muted">Here’s where it’s escaping right now.</p>
+    <div class="kpis">
+      <div class="kpi"><h4>💼 Labour Efficiency</h4><p>+8–12% improvement found.</p><p id="u_labour" class="small muted"></p></div>
+      <div class="kpi"><h4>🧾 Software Waste</h4><p>≈12% overlap.</p><p id="u_saas" class="small muted"></p></div>
+      <div class="kpi"><h4>📦 Vendor Drift</h4><p>2–4% hidden inflation.</p><p id="u_vendor" class="small muted"></p></div>
+    </div>
+    <div class="cards three" style="margin-top:12px">
+      <article class="card locked"><h3>🔒 Marketing ROAS Leaks</h3><p>Which campaigns bleed cash.</p><div class="blur"><span class="padlock">Unlock to reveal</span></div></article>
+      <article class="card locked"><h3>🔒 Scheduling Recovery</h3><p>Open slots worth $11K+/yr.</p><div class="blur"><span class="padlock">Unlock to reveal</span></div></article>
+      <article class="card locked"><h3>🔒 Profit Retention Plan</h3><p>The playbook that keeps the gains.</p><div class="blur"><span class="padlock">Unlock to reveal</span></div></article>
+    </div>
+    <div class="stack" style="margin-top:12px">
+      <a href="./success.html?mock=stripe" class="cta unlock">Unlock full report — $299</a>
+      <span class="muted small">3 diagnostic slots left this week • <span id="countdown" class="timer">10:00</span></span>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer class="footer"><div class="container grid2">
+  <div><div class="logo"><span class="accent">Aura</span>Ai</div><p class="muted small">California-first AI efficiency partner for small and mid-sized businesses.</p></div>
+  <div><div class="stack"><a href="#" aria-label="Privacy Policy">Privacy</a><a href="#" aria-label="Terms of Service">Terms</a><a href="mailto:hello@auraai.example" aria-label="Email">hello@auraai.example</a></div><p class="muted small">© 2025 AuraAi. All rights reserved.</p></div>
+</div></footer>
+
+<script src="./script.js" defer></script>
+</body></html>
