@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://benbuffery-arch.github.io/AuraAi/sitemap.xml
